@@ -7,9 +7,14 @@
 * [Install Docker](#Install-Docker)
 * [Install Docker Compose](#Install-Docker-Compose)
 * [Install nvidia-docker](#Install-nvidia-docker)
-* [Clone the deepracer-for-dummies Repository](#Clone-the-deepracer-for-dummies-Repository)
+* [Post Docker Install](#Post-Docker-Install)
 * [Install the AWS Commandline Interface (awscli)](#Install-the-AWS-Commandline-Interface-(awscli))
 * [Configure aws.cli](#Configure-aws.cli)
+* [Install Anaconda](#Install-Anaconda)
+
+
+* [Clone the deepracer-for-dummies Repository](#Clone-the-deepracer-for-dummies-Repository)
+
 * [empty](#empty)
 
 ## **Install Ubuntu**
@@ -266,6 +271,118 @@
     sudo systemctl restart docker
     ```
 
+## **Post Docker Install**
+
+1. Create the docker group.
+
+    ```terminal
+    sudo groupadd docker
+    ```
+
+2. Add your user to the docker group.
+
+    ```terminal
+    sudo usermod -aG docker $USER
+    ```
+
+3. Activate the changes to groups:
+
+    ```terminal
+    sudo newgrp docker
+    ```
+
+4. Verify that you can run docker commands without sudo.
+
+    ```terminal
+    docker run hello-world
+    ```
+
+5. Configure Docker to start on boot
+
+    ```terminal
+    sudo systemctl enable docker
+    ```
+
+## **Install the AWS Commandline Interface (awscli)**
+
+1. Install python:
+
+    ```terminal
+    sudo apt-get install python
+    ```
+
+2. Install pip3:
+
+    ```terminal
+    sudo apt-get install python3-pip
+    ```
+
+3. Install aws-cli
+
+    ```terminal
+    sudo apt-get install awscli
+    ```
+
+4. Verify
+
+    ```terminal
+    aws --version
+    ```
+
+    You should see soething similar to this:
+
+    ```terminal
+    aws-cli/1.14.44 Python/3.6.8 Linux/5.0.0-23-generic botocore/1.8.48
+    ```
+
+## **Configure aws.cli**
+
+1. Use your AWS Console (IAM) to create a new User.
+
+2. Configure your aws.cli
+
+    ```terminal
+    aws configure
+    AWS Access Key ID [None]: {from Step 1}
+    AWS Secret Access Key [None]: {from Step 1}
+    Default region name [None]: us-east-1
+    Default output format [None]: table
+    ```
+
+## **Install Anaconda**
+
+1. Download Anaconda
+
+    ```terminal
+    sudo apt-get update -y && sudo apt-get upgrade -y
+    cd /tmp/
+    sudo wget https://repo.anaconda.com/archive/Anaconda3-2019.03-Linux-x86_64.sh
+    ```
+
+2. Install Anaconda
+
+    ```terminal
+    bash Anaconda3-2019.03-Linux-x86_64.sh
+    ```
+
+3. Activating Anaconda
+
+    ```terminal
+    source ~/.bashrc
+    ```
+
+4. Verifying the conda package manager works
+
+    ```terminal
+    conda list
+    ```
+
+5. Installing CUDA/CUDNN
+
+    ```terminal
+    conda install cudnn==7.3.1 && conda install -c fragcolor cuda10.0
+    ```
+
 ## **Clone the deepracer-for-dummies Repository**
 
 1. Create a Directory for cloning git Repositories
@@ -290,52 +407,6 @@
 
     ```terminal
     ./init.sh
-    ```
-
-## **Install the AWS Commandline Interface (awscli)**
-
-1. Install python:
-
-    ```terminal
-    sudo apt-get install python
-    ```
-
-1. Install pip3:
-
-    ```terminal
-    sudo apt-get install python3-pip
-    ```
-
-2. Install aws-cli
-
-    ```terminal
-    sudo apt-get install awscli
-    ```
-
-3. Verify
-
-    ```terminal
-    aws --version
-    ```
-    
-    You should see soething similar to this:
-    
-    ```terminal
-    aws-cli/1.14.44 Python/3.6.8 Linux/5.0.0-23-generic botocore/1.8.48
-    ```
-
-## **Configure aws.cli**
-
-1. Use your AWS Console (IAM) to create a new User.
-
-2. Configure your aws.cli
-
-    ```terminal
-    aws configure
-    AWS Access Key ID [None]: {from Step 1}
-    AWS Secret Access Key [None]: {from Step 1}
-    Default region name [None]: us-east-1
-    Default output format [None]: table
     ```
 
 ## **Empty**
