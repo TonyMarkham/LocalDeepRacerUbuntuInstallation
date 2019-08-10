@@ -18,7 +18,7 @@
 
 ## **Install Ubuntu**
 
-For the purposes of the `Deep Racer` Project, I elected to only installa a `minimal` installation of `ubuntu 10.04 LTS`
+For the purposes of the `Deep Racer` Project, I elected to only install a `minimal` installation of `ubuntu 10.04 LTS` Desktop.
 
 You can download the `18.04 LTS` Installation `iso` from [https://ubuntu.com/#download](https://ubuntu.com/#download)
 
