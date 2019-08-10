@@ -1,5 +1,17 @@
 # **Deep Racer**
 
+## **Content**
+
+* [Install Ubuntu](#Install-Ubuntu)
+* [Install nvidia drivers](#Install-nvidia-drivers)
+* [Install Docker](#Install-Docker)
+* [Install Docker Compose](#Install-Docker-Compose)
+* [Install nvidia-docker](#Install-nvidia-docker)
+* [Clone the deepracer-for-dummies Repository](#Clone-the-deepracer-for-dummies-Repository)
+* [Install the AWS Commandline Interface (awscli)](#Install-the-AWS-Commandline-Interface-(awscli))
+* [Configure aws.cli](#Configure-aws.cli)
+* [empty](#empty)
+
 ## **Install Ubuntu**
 
 ## **Install nvidia drivers**
@@ -21,7 +33,7 @@
     You should see output that looks like this:
 
     ```terminal
-    graphics card:                                                  
+    graphics card:
                        nVidia GP102 [GeForce GTX 1080 Ti]
                        Intel Xeon E3-1200 v3/4th Gen Core Processor Integrated Graphics Controller
 
@@ -41,11 +53,11 @@
     ```terminal
     nvidia-smi
     ```
-    
+
     You should see output that looks like this:
-    
+
     ```terminal
-    Sat Aug 10 14:43:31 2019       
+    Sat Aug 10 14:43:31 2019
     +-----------------------------------------------------------------------------+
     | NVIDIA-SMI 430.26       Driver Version: 430.26       CUDA Version: 10.2     |
     |-------------------------------+----------------------+----------------------+
@@ -184,21 +196,103 @@
     Aug 10 14:48:45 ununtu-tony systemd[1]: Started Docker Application Container Engine.
     ```
 
-    Installing Docker now gives you not just the Docker service (daemon) but also the docker command line utility, or the Docker client. We'll explore how to use the docker command later in this tutorial.
+9. Test Docker:
 
-## **Create a Directory for cloning git Repositories**
+    ```terminal
+    docker --version
+    ```
 
-```terminal
-mkdir git && cd git
-```
+    And you should see something like this:
 
-## **Clone the Repository**
+    ```terminal
+    Docker version 19.03.1, build 74b1e89
+    ```
 
-```terminal
-sudo git clone https://github.com/ARCC-RACE/deepracer-for-dummies.git &&cd deepracer-for-dummies &&./init.sh
-```
+## **Install Docker Compose**
 
-## **Install the AWS Commandline INterface (aws.cli)**
+1. Run this command to download the current stable release of Docker Compose:
+
+    ```terminal
+    sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    ```
+
+2. Apply executable permissions to the binary:
+
+    ```terminal
+    sudo chmod +x /usr/local/bin/docker-compose
+    ```
+
+3. Test Docker-Compose:
+
+    ```terminal
+    docker-compose --version
+    ```
+
+    And you should see something like this:
+
+    ```terminal
+    docker-compose version 1.24.1, build 4667896b
+    ```
+
+## **Install nvidia-docker**
+
+1. Set the `distribution` variable:
+
+    ```terminal
+    distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+    ```
+
+2. Set the gpgkey:
+
+    ```terminal
+    sudo curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
+    ```
+
+3. Add nvidia-docker to your apt-get's distribution list:
+
+    ```terminal
+    curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+    ```
+
+4. Install the `nvidia-container-toolkit`
+
+    ```terminal
+    sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit
+    ```
+
+5. Restart Docker:
+
+    ```terminal
+    sudo systemctl restart docker
+    ```
+
+## **Clone the deepracer-for-dummies Repository**
+
+1. Create a Directory for cloning git Repositories
+
+    ```terminal
+    mkdir git && cd git
+    ```
+
+2. Clone the Repository:
+
+    ```terminal
+    sudo git clone https://github.com/ARCC-RACE/deepracer-for-dummies.git &&cd deepracer-for-dummies &&./init.sh
+    ```
+
+3. Change to the deepracer-for-dummies directory:
+
+    ```terminal
+    cd deepracer-for-dummies
+    ```
+
+4. Initialize the repo:
+
+    ```terminal
+    ./init.sh
+    ```
+
+## **Install the AWS Commandline Interface (awscli)**
 
 1. Install python:
 
@@ -243,3 +337,7 @@ sudo git clone https://github.com/ARCC-RACE/deepracer-for-dummies.git &&cd deepr
     Default region name [None]: us-east-1
     Default output format [None]: table
     ```
+
+## **Empty**
+
+[Back to Top](#Deep-Racer)
