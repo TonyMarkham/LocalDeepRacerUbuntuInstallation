@@ -197,3 +197,35 @@ mkdir git && cd git
 ```terminal
 sudo git clone https://github.com/ARCC-RACE/deepracer-for-dummies.git &&cd deepracer-for-dummies &&./init.sh
 ```
+
+## **Install the AWS Commandline INterface (aws.cli)**
+
+1. Install python:
+
+    ```terminal
+    sudo apt-get install python
+    ```
+
+1. Install pip:
+
+    ```terminal
+    sudo apt-get install python3-pip
+    ```
+
+2. Install aws-cli
+
+    ```terminal
+    sudo apt-get install awscli
+    ```
+
+3. Verify
+
+    ```terminal
+    aws --version
+    ```
+    
+    You should see soething similar to this:
+    
+    ```terminal
+    aws-cli/1.14.44 Python/3.6.8 Linux/5.0.0-23-generic botocore/1.8.48
+    ```
