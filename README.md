@@ -4,14 +4,13 @@
 
 * [Install Ubuntu](#Install-Ubuntu)
 * [Install nvidia drivers](#Install-nvidia-drivers)
+* [Install Anaconda](#Install-Anaconda)
 * [Install Docker](#Install-Docker)
 * [Install Docker Compose](#Install-Docker-Compose)
 * [Install nvidia-docker](#Install-nvidia-docker)
 * [Post Docker Install](#Post-Docker-Install)
 * [Install the AWS Commandline Interface (awscli)](#Install-the-AWS-Commandline-Interface-(awscli))
 * [Configure aws.cli](#Configure-aws.cli)
-* [Install Anaconda](#Install-Anaconda)
-
 
 * [Clone the deepracer-for-dummies Repository](#Clone-the-deepracer-for-dummies-Repository)
 
@@ -80,6 +79,40 @@
     |    0      1247      G   /usr/lib/xorg/Xorg                           415MiB |
     |    0      1389      G   /usr/bin/gnome-shell                         143MiB |
     +-----------------------------------------------------------------------------+
+    ```
+
+## **Install Anaconda**
+
+1. Download Anaconda
+
+    ```terminal
+    sudo apt-get update -y && sudo apt-get upgrade -y
+    cd /tmp/
+    sudo wget https://repo.anaconda.com/archive/Anaconda3-2019.03-Linux-x86_64.sh
+    ```
+
+2. Install Anaconda
+
+    ```terminal
+    bash Anaconda3-2019.03-Linux-x86_64.sh
+    ```
+
+3. Activating Anaconda
+
+    ```terminal
+    source ~/.bashrc
+    ```
+
+4. Verifying the conda package manager works
+
+    ```terminal
+    conda list
+    ```
+
+5. Installing CUDA/CUDNN
+
+    ```terminal
+    conda install cudnn==7.3.1 && conda install -c fragcolor cuda10.0
     ```
 
 ## **Install Docker**
@@ -347,40 +380,6 @@
     AWS Secret Access Key [None]: {from Step 1}
     Default region name [None]: us-east-1
     Default output format [None]: table
-    ```
-
-## **Install Anaconda**
-
-1. Download Anaconda
-
-    ```terminal
-    sudo apt-get update -y && sudo apt-get upgrade -y
-    cd /tmp/
-    sudo wget https://repo.anaconda.com/archive/Anaconda3-2019.03-Linux-x86_64.sh
-    ```
-
-2. Install Anaconda
-
-    ```terminal
-    bash Anaconda3-2019.03-Linux-x86_64.sh
-    ```
-
-3. Activating Anaconda
-
-    ```terminal
-    source ~/.bashrc
-    ```
-
-4. Verifying the conda package manager works
-
-    ```terminal
-    conda list
-    ```
-
-5. Installing CUDA/CUDNN
-
-    ```terminal
-    conda install cudnn==7.3.1 && conda install -c fragcolor cuda10.0
     ```
 
 ## **Clone the deepracer-for-dummies Repository**
