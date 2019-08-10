@@ -186,12 +186,6 @@
 
     Installing Docker now gives you not just the Docker service (daemon) but also the docker command line utility, or the Docker client. We'll explore how to use the docker command later in this tutorial.
 
-## **Install git**
-
-```terminal
-sudo apt-get install git-core
-```
-
 ## **Create a Directory for cloning git Repositories**
 
 ```terminal
@@ -201,5 +195,5 @@ mkdir git && cd git
 ## **Clone the Repository**
 
 ```terminal
-git clone https://github.com/ARCC-RACE/deepracer-for-dummies.git &&cd deepracer-for-dummies &&./init.sh
+sudo git clone https://github.com/ARCC-RACE/deepracer-for-dummies.git &&cd deepracer-for-dummies &&./init.sh
 ```
