@@ -398,7 +398,7 @@ You can download the `18.04 LTS` Installation `iso` from [https://ubuntu.com/#do
 2. Clone the Repository:
 
     ```terminal
-    sudo git clone https://github.com/ARCC-RACE/deepracer-for-dummies.git &&cd deepracer-for-dummies &&./init.sh
+    sudo git clone https://github.com/ARCC-RACE/deepracer-for-dummies.git
     ```
 
 3. Change to the deepracer-for-dummies directory:
