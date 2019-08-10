@@ -343,25 +343,13 @@ You can download the `18.04 LTS` Installation `iso` from [https://ubuntu.com/#do
 
 ## **Install the AWS Commandline Interface (awscli)**
 
-1. Install python:
-
-    ```terminal
-    sudo apt-get install python
-    ```
-
-2. Install pip3:
-
-    ```terminal
-    sudo apt-get install python3-pip
-    ```
-
-3. Install aws-cli
+1. Install aws-cli
 
     ```terminal
     sudo apt-get install awscli
     ```
 
-4. Verify
+2. Verify
 
     ```terminal
     aws --version
