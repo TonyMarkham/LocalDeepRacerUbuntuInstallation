@@ -18,6 +18,8 @@
 
 ## **Install Ubuntu**
 
+For the purposes of the `Deep Racer` Project, I elected to only installa a `minimal` installation of `ubuntu 10.04 LTS`
+
 ## **Install nvidia drivers**
 
 * NOTE: You may need to disable `safety boot`
