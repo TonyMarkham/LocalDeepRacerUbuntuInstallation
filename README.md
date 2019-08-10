@@ -206,7 +206,7 @@ sudo git clone https://github.com/ARCC-RACE/deepracer-for-dummies.git &&cd deepr
     sudo apt-get install python
     ```
 
-1. Install pip:
+1. Install pip3:
 
     ```terminal
     sudo apt-get install python3-pip
@@ -228,4 +228,18 @@ sudo git clone https://github.com/ARCC-RACE/deepracer-for-dummies.git &&cd deepr
     
     ```terminal
     aws-cli/1.14.44 Python/3.6.8 Linux/5.0.0-23-generic botocore/1.8.48
+    ```
+
+## **Configure aws.cli**
+
+1. Use your AWS Console (IAM) to create a new User.
+
+2. Configure your aws.cli
+
+    ```terminal
+    aws configure
+    AWS Access Key ID [None]: {from Step 1}
+    AWS Secret Access Key [None]: {from Step 1}
+    Default region name [None]: us-east-1
+    Default output format [None]: table
     ```
