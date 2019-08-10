@@ -5,6 +5,7 @@
 * [Install Ubuntu](#Install-Ubuntu)
 * [Install nvidia drivers](#Install-nvidia-drivers)
 * [Install Anaconda](#Install-Anaconda)
+* [Install VNC Viewer](#Install-VNC-Viewer)
 * [Install Docker](#Install-Docker)
 * [Install Docker Compose](#Install-Docker-Compose)
 * [Install nvidia-docker](#Install-nvidia-docker)
@@ -118,6 +119,26 @@ You can download the `18.04 LTS` Installation `iso` from [https://ubuntu.com/#do
 
     ```terminal
     conda install cudnn==7.3.1 && conda install -c fragcolor cuda10.0
+    ```
+
+## **Install VNC Viewer**
+
+1. Change to your `Downloads` folder
+
+    ```terminal
+    cd ~/Downloads
+    ```
+
+2. Download VNC Viewer.
+
+    ```terminal
+    sudo dpkg -i VNC-Server-*-Linux-x64.deb
+    ```
+
+3. Install the VNC Viewer
+
+    ```terminal
+    sudo apt install -f
     ```
 
 ## **Install Docker**
