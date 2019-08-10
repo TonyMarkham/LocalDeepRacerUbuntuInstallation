@@ -20,9 +20,12 @@
 
 For the purposes of the `Deep Racer` Project, I elected to only installa a `minimal` installation of `ubuntu 10.04 LTS`
 
+You can download the `18.04 LTS` Installation `iso` from [https://ubuntu.com/#download](https://ubuntu.com/#download)
+
 ## **Install nvidia drivers**
 
-* NOTE: You may need to disable `safety boot`
+* NOTE: You may need to disable `Secure Boot`.
+    My motherboard would not allow me to install the nvidia drivers with `Secure Boot` enabled, so I had to disable it in order to proceed.
 
 1. Install `hwinfo`
 
