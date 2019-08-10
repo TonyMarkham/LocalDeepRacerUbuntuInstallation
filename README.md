@@ -132,7 +132,7 @@ You can download the `18.04 LTS` Installation `iso` from [https://ubuntu.com/#do
 2. Download VNC Viewer.
 
     ```terminal
-    sudo dpkg -i https://www.realvnc.com/download/file/viewer.files/VNC-Viewer-6.19.715-Linux-x86.deb
+    sudo wget https://www.realvnc.com/download/file/viewer.files/VNC-Viewer-6.19.715-Linux-x64.deb
     ```
 
 3. Install the VNC Viewer
