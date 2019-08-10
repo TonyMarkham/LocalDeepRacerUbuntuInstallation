@@ -91,8 +91,8 @@ You can download the `18.04 LTS` Installation `iso` from [https://ubuntu.com/#do
 1. Download Anaconda
 
     ```terminal
-    sudo apt-get update -y && sudo apt-get upgrade -y
-    cd /tmp/
+    sudo apt-get update -y && sudo apt-get upgrade -y && \
+    cd /tmp/ && \
     sudo wget https://repo.anaconda.com/archive/Anaconda3-2019.03-Linux-x86_64.sh
     ```
 
