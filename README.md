@@ -107,10 +107,40 @@
 
         ```terminal
         docker-ce:
-        Installed: (none)
-        Candidate: 18.03.1~ce~3-0~ubuntu
-        Version table:
-            18.03.1~ce~3-0~ubuntu 500
+          Installed: (none)
+          Candidate: 5:19.03.1~3-0~ubuntu-bionic
+          Version table:
+             5:19.03.1~3-0~ubuntu-bionic 500
+                500 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
+             5:19.03.0~3-0~ubuntu-bionic 500
+                500 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
+             5:18.09.8~3-0~ubuntu-bionic 500
+                500 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
+             5:18.09.7~3-0~ubuntu-bionic 500
+                500 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
+             5:18.09.6~3-0~ubuntu-bionic 500
+                500 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
+             5:18.09.5~3-0~ubuntu-bionic 500
+                500 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
+             5:18.09.4~3-0~ubuntu-bionic 500
+                500 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
+             5:18.09.3~3-0~ubuntu-bionic 500
+                500 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
+             5:18.09.2~3-0~ubuntu-bionic 500
+                500 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
+             5:18.09.1~3-0~ubuntu-bionic 500
+                500 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
+             5:18.09.0~3-0~ubuntu-bionic 500
+                500 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
+             18.06.3~ce~3-0~ubuntu 500
+                500 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
+             18.06.2~ce~3-0~ubuntu 500
+                500 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
+             18.06.1~ce~3-0~ubuntu 500
+                500 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
+             18.06.0~ce~3-0~ubuntu 500
+                500 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
+             18.03.1~ce~3-0~ubuntu 500
                 500 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
         ```
 
