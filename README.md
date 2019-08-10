@@ -2,6 +2,36 @@
 
 ## **Install Ubuntu**
 
+## **Install nvidia drivers**
+
+* NOTE: You may need to disable `safety boot`
+
+1. Type the following and examine the ouput to ensure that you have an nvidia gpu:
+
+    ```terminal
+    hwinfo --gfxcard --short
+    ```
+
+    You should see output that looks like this:
+
+    ```terminal
+
+    ```
+
+2. Use the Ubuntu Software & Updates GUI to install the `nvidia-driver-430 (proprietary, tetsed)`
+
+3. Roboot.
+
+    ```terminal
+    sudo reboot
+    ```
+
+4. Verify
+
+    ```terminal
+    nvidia-smi
+    ```
+
 ## **Install Docker**
 
 1. Update your packages
