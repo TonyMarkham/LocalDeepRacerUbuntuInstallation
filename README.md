@@ -49,7 +49,7 @@ You can download the `18.04 LTS` Installation `iso` from [https://ubuntu.com/#do
     Primary display adapter: #12
     ```
 
-3. Use the Ubuntu Software & Updates GUI to install the `nvidia-driver-430 (proprietary, tetsed)`
+3. Use the Ubuntu `Software & Updates` GUI to install the `nvidia-driver-430 (proprietary, tested)`
 
 4. Roboot.
 
