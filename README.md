@@ -169,7 +169,7 @@ You can download the `18.04 LTS` Installation `iso image` from [https://ubuntu.c
     You should see soething similar to this:
 
     ```terminal
-    aws-cli/1.14.44 Python/3.6.8 Linux/5.0.0-23-generic botocore/1.8.48
+    aws-cli/1.16.215 Python/3.7.3 Linux/5.0.0-23-generic botocore/1.12.205
     ```
 
 [Back to Top](#Deep-Racer)
