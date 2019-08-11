@@ -567,10 +567,36 @@ sudo reboot
 docker network create sagemaker-local
 ```
 
+[Back to Top](#Deep-Racer)
+
+## **Set the track to train on**
+
+1. Edit the `WORLD_NAME` variable in the `deepracer-for-dummies/docker/.env` file:
+
+    ```terminal
+    sudo sed -i 's/WORLD_NAME=AWS_track/WORLD_NAME=China_track/' ~/git/deepracer-for-dummies/docker/.env
+    ```
+
 ## **Start the training with the defaults**
 
+1. Start the training:
+
+    ```terminal
+    cd ~/git/deepracer-for-dummies/scripts/training && \
+        sudo ./start.sh
+    ```
+
+2. Stop the training:
+
+    ```terminal
+    cd ~/git/deepracer-for-dummies/scripts/training && \
+        sudo ./stop.sh
+    ```
+
+## **Evaluate the training**
+
 ```terminal
-cd ~/git/deepracer-for-dummies/scripts/training && \
+cd ~/git/deepracer-for-dummies/scripts/evaluation && \
     sudo ./start.sh
 ```
 
