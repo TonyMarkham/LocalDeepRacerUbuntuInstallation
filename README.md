@@ -12,7 +12,9 @@
 * [8. Install nvidia-docker](#8.-Install-nvidia-docker)
 * [9. Post Docker Install](#9.-Post-Docker-Install)
 * [10. Install VNC Viewer](#10.-Install-VNC-Viewer)
-* [11. Clone the deepracer-for-dummies Repository](#11.-Clone-the-deepracer-for-dummies-Repository)
+* [11. Install Visual Studio Code](#11.-Install-Visual-Studio-Code)
+* [12. Clone the deepracer-for-dummies Repository](#12.-Clone-the-deepracer-for-dummies-Repository)
+* [13. Start the Docker sagemaker-local Container](#13.-Start-the-Docker-sagemaker-local-Container)
 * [empty](#empty)
 
 ## **1. Install Ubuntu**
@@ -470,9 +472,45 @@ You can download the `18.04 LTS` Installation `iso image` from [https://ubuntu.c
     sudo apt install -f
     ```
 
+5. Start `vncviewer` for the first time:
+
+    ```terminal
+    cd ~ && vncviewer
+    ```
+
+    Satisfy any windows that pop up and then close the viewer.
+
 [Back to Top](#Deep-Racer)
 
-## **11. Clone the deepracer-for-dummies Repository**
+## **11. Install Visual Studio Code**
+
+1. Import the Microsoft GPG key:
+
+    ```terminal
+    wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+    ```
+
+2. Enable the Visual Studio Code repository:
+
+    ```terminal
+    sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+    ```
+
+3. Update the apt-get repository:
+
+    ```terminal
+    sudo apt update
+    ```
+
+4. Install the latest version of Visual Studio Code:
+
+    ```terminal
+    sudo apt install code
+    ```
+
+[Back to Top](#Deep-Racer)
+
+## **12. Clone the deepracer-for-dummies Repository**
 
 1. Create a Directory for cloning git Repositories:
 
@@ -499,6 +537,12 @@ You can download the `18.04 LTS` Installation `iso image` from [https://ubuntu.c
     ```
 
 [Back to Top](#Deep-Racer)
+
+## **13. Start the Docker sagemaker-local Container**
+
+    ```terminal
+    docker network create sagemaker-local
+    ```
 
 ## **Empty**
 
