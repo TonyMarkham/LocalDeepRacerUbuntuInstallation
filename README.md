@@ -621,7 +621,13 @@ docker network create sagemaker-local
 
 ## **Tweak the rewards**
 
-1. Edit the `reward.py` file in Visual Studio Code:
+1. Give yourself the ability to edit `reward.py`:
+
+    ```terminal
+    sudo chmod 766 ~/git/deepracer-for-dummies/docker/volumes/minio/bucket/custom_files/reward.py
+    ```
+
+2. Edit the `reward.py` file in Visual Studio Code:
 
 ```terminal
 code ~/git/deepracer-for-dummies/docker/volumes/minio/bucket/custom_files/reward.py
@@ -633,7 +639,13 @@ code ~/git/deepracer-for-dummies/docker/volumes/minio/bucket/custom_files/reward
 
 * Be aware that the default `rl_deepracer_coach_robomaker.py` populates the `job_duration_in_seconds` variable around line number `45` to run for `24` hours.  I personally set that to `1` hour for my initial testing.
 
-1. Edit the `rl_deepracer_coach_robomaker.py` file in Visual Studio Code:
+1. Give yourself the ability to edit `rl_deepracer_coach_robomaker.py`:
+
+    ```terminal
+    sudo chmod 766 ~/git/deepracer-for-dummies/deepracer/rl_coach/rl_deepracer_coach_robomaker.py
+    ```
+
+2. Edit the `rl_deepracer_coach_robomaker.py` file in Visual Studio Code:
 
 ```terminal
 code ~/git/deepracer-for-dummies/rl_deepracer_coach_robomaker.py
