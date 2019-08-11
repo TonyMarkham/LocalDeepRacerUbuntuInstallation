@@ -631,6 +631,8 @@ code ~/git/deepracer-for-dummies/docker/volumes/minio/bucket/custom_files/reward
 
 ## **Tweak the hyperparameters**
 
+* Be aware that the default `rl_deepracer_coach_robomaker.py` populates the `job_duration_in_seconds` variable around line number `45` to run for `24` hours.  I personally set that to `1` hour for my initial testing.
+
 1. Edit the `rl_deepracer_coach_robomaker.py` file in Visual Studio Code:
 
 ```terminal
