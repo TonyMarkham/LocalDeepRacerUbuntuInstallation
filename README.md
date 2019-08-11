@@ -13,9 +13,10 @@
 * [9. Post Docker Install](#Post-Docker-Install)
 * [10. Install VNC Viewer](#Install-VNC-Viewer)
 * [11. Install Visual Studio Code](#Install-Visual-Studio-Code)
-* [12. Clone the deepracer-for-dummies Repository](#Clone-the-deepracer-for-dummies-Repository)
-* [13. Start the Docker sagemaker-local Container](#Start-the-Docker-sagemaker-local-Container)
-* [14. Start the training with the defaults](#Start-the-training-with-the-defaults)
+* [12. Reboot](#Reboot)
+* [13. Clone the deepracer-for-dummies Repository](#Clone-the-deepracer-for-dummies-Repository)
+* [14. Start the Docker sagemaker-local Container](#Start-the-Docker-sagemaker-local-Container)
+* [15. Start the training with the defaults](#Start-the-training-with-the-defaults)
 
 ## **Install Ubuntu**
 
@@ -507,6 +508,14 @@ You can download the `18.04 LTS` Installation `iso image` from [https://ubuntu.c
     ```terminal
     sudo apt install -y code
     ```
+
+[Back to Top](#Deep-Racer)
+
+## **Reboot**
+
+```terminal
+sudo reboot
+```
 
 [Back to Top](#Deep-Racer)
 
