@@ -45,7 +45,7 @@ You can download the `18.04 LTS` Installation `iso image` from [https://ubuntu.c
 3. Install the driver and then reboot:
 
     ```terminal
-    sudo apt install nvidia-driver-410 && sudo reboot
+    sudo apt install -y nvidia-driver-410 && sudo reboot
     ```
 
     Continue after the reboot...
@@ -82,7 +82,7 @@ You can download the `18.04 LTS` Installation `iso image` from [https://ubuntu.c
 5. Install nvidia Cuda Toolkit:
 
     ```terminal
-    sudo apt-get install nvidie-cuda-toolkit
+    sudo apt-get install -y nvidia-cuda-toolkit
     ```
 
 6. Verify:
@@ -149,7 +149,7 @@ You can download the `18.04 LTS` Installation `iso image` from [https://ubuntu.c
 1. Install aws-cli
 
     ```terminal
-    sudo apt-get install awscli
+    sudo apt-get install -y awscli
     ```
 
 2. Verify
@@ -259,7 +259,7 @@ You can download the `18.04 LTS` Installation `iso image` from [https://ubuntu.c
 3. Install some prerequisite packages:
 
     ```terminal
-    sudo apt-get install \
+    sudo apt-get install -y \
         apt-transport-https \
         ca-certificates \
         curl \
@@ -297,7 +297,7 @@ You can download the `18.04 LTS` Installation `iso image` from [https://ubuntu.c
 8. Install Docker:
 
     ```terminal
-    sudo apt-get install docker-ce docker-ce-cli containerd.io
+    sudo apt-get install -y docker-ce docker-ce-cli containerd.io
     ```
 
 9. Check that Docker is running:
@@ -401,7 +401,7 @@ You can download the `18.04 LTS` Installation `iso image` from [https://ubuntu.c
 5. Install the `nvidia-docker2`
 
     ```terminal
-    sudo apt-get install nvidia-docker2
+    sudo apt-get install -y nvidia-docker2
     ```
 
 6. Restart Docker:
@@ -505,7 +505,7 @@ You can download the `18.04 LTS` Installation `iso image` from [https://ubuntu.c
 4. Install the latest version of Visual Studio Code:
 
     ```terminal
-    sudo apt install code
+    sudo apt install -y code
     ```
 
 [Back to Top](#Deep-Racer)
@@ -533,7 +533,7 @@ You can download the `18.04 LTS` Installation `iso image` from [https://ubuntu.c
 4. Initialize the repo:
 
     ```terminal
-    ./init.sh
+    sudo ./init.sh
     ```
 
 [Back to Top](#Deep-Racer)
