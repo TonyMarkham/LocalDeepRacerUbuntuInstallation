@@ -570,7 +570,8 @@ docker network create sagemaker-local
 ## **Start the training with the defaults**
 
 ```terminal
-cd ~/git/deepracer-for-dummies && sudo ./scripts/training/start.sh
+cd ~/git/deepracer-for-dummies/scripts/training && \
+    sudo ./start.sh
 ```
 
 [Back to Top](#Deep-Racer)
