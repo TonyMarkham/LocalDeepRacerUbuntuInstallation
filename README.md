@@ -2,63 +2,53 @@
 
 ## **Content**
 
-* [Install Ubuntu](#Install-Ubuntu)
-* [Install nvidia drivers](#Install-nvidia-drivers)
-* [Install Anaconda](#Install-Anaconda)
-* [Install VNC Viewer](#Install-VNC-Viewer)
-* [Install Docker](#Install-Docker)
-* [Install Docker Compose](#Install-Docker-Compose)
-* [Install nvidia-docker](#Install-nvidia-docker)
-* [Post Docker Install](#Post-Docker-Install)
-* [Install the AWS Commandline Interface (awscli)](#Install-the-AWS-Commandline-Interface-(awscli))
-* [Configure aws.cli](#Configure-aws.cli)
-
-* [Clone the deepracer-for-dummies Repository](#Clone-the-deepracer-for-dummies-Repository)
-
+* [1. Install Ubuntu](#1.-Install-Ubuntu)
+* [2. Install nvidia drivers](#2.-Install-nvidia-drivers)
+* [3. Install Anaconda](#3.-Install-Anaconda)
+* [4. Install the AWS Commandline Interface (awscli)](#4.-Install-the-AWS-Commandline-Interface-(awscli))
+* [5. Configure aws.cli](#5.-Configure-aws.cli)
+* [6. Install Docker](#6.-Install-Docker)
+* [7. Install Docker Compose](#7.-Install-Docker-Compose)
+* [8. Install nvidia-docker](#8.-Install-nvidia-docker)
+* [9. Post Docker Install](#9.-Post-Docker-Install)
+* [10. Install VNC Viewer](#10.-Install-VNC-Viewer)
+* [11. Clone the deepracer-for-dummies Repository](#11.-Clone-the-deepracer-for-dummies-Repository)
 * [empty](#empty)
 
-## **Install Ubuntu**
+## **1. Install Ubuntu**
 
-For the purposes of the `Deep Racer` Project, I elected to only install a `minimal` installation of `ubuntu 10.04 LTS` Desktop.
+For the purposes of the `Deep Racer` Project, I elected to only install a `minimal` installation of `ubuntu 18.04 LTS` Desktop.
 
-You can download the `18.04 LTS` Installation `iso` from [https://ubuntu.com/#download](https://ubuntu.com/#download)
+You can download the `18.04 LTS` Installation `iso image` from [https://ubuntu.com/#download](https://ubuntu.com/#download)
 
-## **Install nvidia drivers**
+[Back to Top](#Deep-Racer)
 
-* NOTE: You may need to disable `Secure Boot`.
+## **2. Install nvidia drivers**
+
+* **NOTE:** You may need to disable `Secure Boot` in your BIOS.
     My motherboard would not allow me to install the nvidia drivers with `Secure Boot` enabled, so I had to disable it in order to proceed.
 
-1. Install `hwinfo`
+1. Add driver location to the apt-get repositories:
 
     ```terminal
-    sudo apt-get install hwinfo
+    sudo add-apt-repository ppa:graphics-drivers
     ```
 
-2. Type the following and examine the ouput to ensure that you have an nvidia gpu:
+2. Update apt-get:
 
     ```terminal
-    hwinfo --gfxcard --short
+    sudo apt-get update
     ```
 
-    You should see output that looks like this:
+3. Install the driver and then reboot:
 
     ```terminal
-    graphics card:
-                       nVidia GP102 [GeForce GTX 1080 Ti]
-                       Intel Xeon E3-1200 v3/4th Gen Core Processor Integrated Graphics Controller
-
-    Primary display adapter: #12
+    sudo apt install nvidia-driver-410 && sudo reboot
     ```
 
-3. Use the Ubuntu `Software & Updates` GUI to install the `nvidia-driver-430 (proprietary, tested)`
+    Continue after the reboot...
 
-4. Roboot.
-
-    ```terminal
-    sudo reboot
-    ```
-
-5. Verify
+4. Verify the driver installation:
 
     ```terminal
     nvidia-smi
@@ -87,9 +77,32 @@ You can download the `18.04 LTS` Installation `iso` from [https://ubuntu.com/#do
     +-----------------------------------------------------------------------------+
     ```
 
-## **Install Anaconda**
+5. Install nvidia Cuda Toolkit:
 
-1. Download Anaconda
+    ```terminal
+    sudo apt-get install nvidie-cuda-toolkit
+    ```
+
+6. Verify:
+
+    ```terminal
+    nvcc --version
+    ```
+
+    You should see output that looks like this:
+
+    ```terminal
+    nvcc: NVIDIA (R) Cuda compiler driver
+    Copyright (c) 2005-2017 NVIDIA Corporation
+    Built on Fri_Nov__3_21:07:56_CDT_2017
+    Cuda compilation tools, release 9.1, V9.1.85
+    ```
+
+[Back to Top](#Deep-Racer)
+
+## **3. Install Anaconda**
+
+1. Download Anaconda:
 
     ```terminal
     sudo apt-get update -y && sudo apt-get upgrade -y && \
@@ -97,146 +110,195 @@ You can download the `18.04 LTS` Installation `iso` from [https://ubuntu.com/#do
     sudo wget https://repo.anaconda.com/archive/Anaconda3-2019.03-Linux-x86_64.sh
     ```
 
-2. Install Anaconda
+2. Install Anaconda:
 
     ```terminal
     bash Anaconda3-2019.03-Linux-x86_64.sh
     ```
 
-3. Activating Anaconda
+3. Go back to your `HOME` directory:
+
+    ```terminal
+    cd ~
+    ```
+
+4. Activating Anaconda:
 
     ```terminal
     source ~/.bashrc
     ```
 
-4. Verifying the conda package manager works
+5. Verifying the conda package manager works:
 
     ```terminal
     conda list
     ```
 
-5. Installing CUDA/CUDNN
+6. Installing CUDA/CUDNN:
 
     ```terminal
     conda install cudnn==7.3.1 && conda install -c fragcolor cuda10.0
     ```
 
-## **Install VNC Viewer**
+[Back to Top](#Deep-Racer)
 
-1. Change to your `Downloads` folder
+## **4. Install the AWS Commandline Interface (awscli)**
 
-    ```terminal
-    cd ~/Downloads
-    ```
-
-2. Download VNC Viewer.
+1. Install aws-cli
 
     ```terminal
-    sudo wget https://www.realvnc.com/download/file/viewer.files/VNC-Viewer-6.19.715-Linux-x64.deb
+    sudo apt-get install awscli
     ```
 
-3. Install the VNC Viewer
+2. Verify
 
     ```terminal
-    sudo dpkg -i VNC-Viewer-6.19.715-Linux-x64.deb
+    aws --version
     ```
 
-4. Correct any missing depencies:
+    You should see soething similar to this:
 
     ```terminal
-    sudo apt install -f
+    aws-cli/1.14.44 Python/3.6.8 Linux/5.0.0-23-generic botocore/1.8.48
     ```
 
-## **Install Docker**
+[Back to Top](#Deep-Racer)
 
-1. Update your packages
+## **5. Configure aws.cli**
+
+1. Go to [https://aws.amazon.com/](https://aws.amazon.com/).
+
+    1. Click on `My Account`.
+    2. Select `AWS Management Console`.
+
+    ![awscli_01_01_a.png](./img/awscli_01_01_a.png)
+
+2. Use your AWS Credentials:
+    1. Enter your `e-mail address` or your `AWS Account`
+    2. Click on `Next`.
+
+    ![awscli_01_02_a.png](./img/awscli_01_02_a.png)
+
+3. Contuinue with your AWS Credentials:
+    1. Enter your `password`.
+    2. Click on `Next`.
+
+    ![awscli_01_03_a.png](./img/awscli_01_03_a.png)
+
+4. Locate the `Security, Identity, & Compliance` section:
+    1. Click on `IAM`.
+
+    ![awscli_01_04_a.png](./img/awscli_01_04_a.png)
+
+5. In the `IAM Resources` section:
+    1. Click on `Users:`.
+
+    ![awscli_01_05_a.png](./img/awscli_01_05_a.png)
+
+6. Click on the `Add user` button
+
+    ![awscli_01_06_a.png](./img/awscli_01_06_a.png)
+
+7. On the 1st `Add user` form:
+    1. Enter a `User Name` in the `Set user details` area.
+    2. In the `Select AWS Access` area, add a check beside `Programmatic access`.
+    3. Click on the `Next: Permissions` button.
+
+    ![awscli_01_07_a.png](./img/awscli_01_07_a.png)
+
+8. On the 2nd `Add user` form:
+    1. Click on the `Attch existing policies directly` button.
+
+    ![awscli_01_08_a.png](./img/awscli_01_08_a.png)
+
+9. On the 3rd `Add user` form:
+    1. Add a check beside `Administrator Access`.
+    2. Click on the `Next: Tags` button.
+
+    ![awscli_01_09_a.png](./img/awscli_01_09_a.png)
+
+10. On the 4rd `Add user` form:
+    2. Click on the `Next: Review` button.
+
+    ![awscli_01_10_a.png](./img/awscli_01_10_a.png)
+
+11. IMPORTANT: Keep the 5th `Add user` page open in order to reference the temporary information:
+    1. The `Access Key ID` will be used when you run `aws configure`.
+    2. The `Security access key` will be used when you run `aws configure`.
+
+    ![awscli_01_11_a.png](./img/awscli_01_11_a.png)
+
+12. Configure your aws.cli:
+
+    ```terminal
+    aws configure
+    AWS Access Key ID [None]: {from Step 11 > 1}
+    AWS Secret Access Key [None]: {from Step 11 > 2}
+    Default region name [None]: us-east-1
+    Default output format [None]: table
+    ```
+
+[Back to Top](#Deep-Racer)
+
+## **6. Install Docker**
+
+1. Make sure your Ubuntu is clean of Docker components:
+
+    ```terminal
+    sudo apt-get remove docker docker-engine docker.io containerd runc
+    ```
+
+2. Update your packages:
 
     ```terminal
     sudo apt-get update
     ```
 
-2. Install packages to allow for https delivery of packages
+3. Install some prerequisite packages:
 
     ```terminal
-    sudo apt install apt-transport-https ca-certificates curl software-properties-common
+    sudo apt-get install \
+        apt-transport-https \
+        ca-certificates \
+        curl \
+        gnupg-agent \
+        software-properties-common
     ```
 
-3. Add the GPG key for the official Docker repository
+4. Add the GPG key for the official Docker repository:
 
     ```terminal
     sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
     ```
 
-4. Add the Docker Repository to your apt sources
+5. Add the figerrprint:
 
     ```terminal
-    sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+    sudo apt-key fingerprint 0EBFCD88
     ```
 
-5. Update your packages again
+6. Add the Docker Repository to your apt sources:
+
+    ```terminal
+    sudo add-apt-repository \
+        "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+        $(lsb_release -cs) \
+        stable"
+    ```
+
+7. Update your packages again:
 
     ```terminal
     sudo apt-get update
     ```
 
-6. Make sure you are about to install from the Docker repo instead of the default Ubuntu repo by listing the current candidates:
+8. Install Docker:
 
     ```terminal
-    sudo apt-cache policy docker-ce
+    sudo apt-get install docker-ce docker-ce-cli containerd.io
     ```
 
-    1. You'll see output like this, although the version number for Docker may be different:
-
-        ```terminal
-        docker-ce:
-          Installed: (none)
-          Candidate: 5:19.03.1~3-0~ubuntu-bionic
-          Version table:
-             5:19.03.1~3-0~ubuntu-bionic 500
-                500 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
-             5:19.03.0~3-0~ubuntu-bionic 500
-                500 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
-             5:18.09.8~3-0~ubuntu-bionic 500
-                500 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
-             5:18.09.7~3-0~ubuntu-bionic 500
-                500 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
-             5:18.09.6~3-0~ubuntu-bionic 500
-                500 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
-             5:18.09.5~3-0~ubuntu-bionic 500
-                500 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
-             5:18.09.4~3-0~ubuntu-bionic 500
-                500 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
-             5:18.09.3~3-0~ubuntu-bionic 500
-                500 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
-             5:18.09.2~3-0~ubuntu-bionic 500
-                500 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
-             5:18.09.1~3-0~ubuntu-bionic 500
-                500 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
-             5:18.09.0~3-0~ubuntu-bionic 500
-                500 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
-             18.06.3~ce~3-0~ubuntu 500
-                500 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
-             18.06.2~ce~3-0~ubuntu 500
-                500 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
-             18.06.1~ce~3-0~ubuntu 500
-                500 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
-             18.06.0~ce~3-0~ubuntu 500
-                500 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
-             18.03.1~ce~3-0~ubuntu 500
-                500 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
-        ```
-
-        Notice that docker-ce is not installed, but the candidate for installation is from the Docker repository for Ubuntu 18.04 (bionic).
-
-7. Finally, install Docker:
-
-    ```terminal
-    sudo apt-get install docker-ce
-    ```
-
-    Docker should now be installed, the daemon started, and the process enabled to start on boot. Check that it's running:
-
-8. Check that its working:
+9. Check that Docker is running:
 
     ```terminal
     sudo systemctl status docker
@@ -266,7 +328,7 @@ You can download the `18.04 LTS` Installation `iso` from [https://ubuntu.com/#do
     Aug 10 14:48:45 ununtu-tony systemd[1]: Started Docker Application Container Engine.
     ```
 
-9. Test Docker:
+10. Check Docker's version:
 
     ```terminal
     docker --version
@@ -278,7 +340,9 @@ You can download the `18.04 LTS` Installation `iso` from [https://ubuntu.com/#do
     Docker version 19.03.1, build 74b1e89
     ```
 
-## **Install Docker Compose**
+[Back to Top](#Deep-Racer)
+
+## **7. Install Docker Compose**
 
 1. Run this command to download the current stable release of Docker Compose:
 
@@ -304,7 +368,9 @@ You can download the `18.04 LTS` Installation `iso` from [https://ubuntu.com/#do
     docker-compose version 1.24.1, build 4667896b
     ```
 
-## **Install nvidia-docker**
+[Back to Top](#Deep-Racer)
+
+## **8. Install nvidia-docker**
 
 1. Set the `distribution` variable:
 
@@ -324,19 +390,27 @@ You can download the `18.04 LTS` Installation `iso` from [https://ubuntu.com/#do
     curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
     ```
 
-4. Install the `nvidia-container-toolkit`
+4. Update the apt-get repositories:
 
     ```terminal
-    sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit
+    sudo apt-get update
     ```
 
-5. Restart Docker:
+5. Install the `nvidia-docker2`
+
+    ```terminal
+    sudo apt-get install nvidia-docker2
+    ```
+
+6. Restart Docker:
 
     ```terminal
     sudo systemctl restart docker
     ```
 
-## **Post Docker Install**
+[Back to Top](#Deep-Racer)
+
+## **9. Post Docker Install**
 
 1. Create the docker group.
 
@@ -368,43 +442,39 @@ You can download the `18.04 LTS` Installation `iso` from [https://ubuntu.com/#do
     sudo systemctl enable docker
     ```
 
-## **Install the AWS Commandline Interface (awscli)**
+[Back to Top](#Deep-Racer)
 
-1. Install aws-cli
+## **10. Install VNC Viewer**
 
-    ```terminal
-    sudo apt-get install awscli
-    ```
-
-2. Verify
+1. Change to your `Downloads` folder
 
     ```terminal
-    aws --version
+    cd ~/Downloads
     ```
 
-    You should see soething similar to this:
+2. Download VNC Viewer.
 
     ```terminal
-    aws-cli/1.14.44 Python/3.6.8 Linux/5.0.0-23-generic botocore/1.8.48
+    sudo wget https://www.realvnc.com/download/file/viewer.files/VNC-Viewer-6.19.715-Linux-x64.deb
     ```
 
-## **Configure aws.cli**
-
-1. Use your AWS Console (IAM) to create a new User.
-
-2. Configure your aws.cli
+3. Install the VNC Viewer
 
     ```terminal
-    aws configure
-    AWS Access Key ID [None]: {from Step 1}
-    AWS Secret Access Key [None]: {from Step 1}
-    Default region name [None]: us-east-1
-    Default output format [None]: table
+    sudo dpkg -i VNC-Viewer-6.19.715-Linux-x64.deb
     ```
 
-## **Clone the deepracer-for-dummies Repository**
+4. Correct any missing depencies:
 
-1. Create a Directory for cloning git Repositories
+    ```terminal
+    sudo apt install -f
+    ```
+
+[Back to Top](#Deep-Racer)
+
+## **11. Clone the deepracer-for-dummies Repository**
+
+1. Create a Directory for cloning git Repositories:
 
     ```terminal
     mkdir git && cd git
@@ -427,6 +497,8 @@ You can download the `18.04 LTS` Installation `iso` from [https://ubuntu.com/#do
     ```terminal
     ./init.sh
     ```
+
+[Back to Top](#Deep-Racer)
 
 ## **Empty**
 
