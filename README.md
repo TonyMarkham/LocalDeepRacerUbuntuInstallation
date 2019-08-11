@@ -603,10 +603,19 @@ docker network create sagemaker-local
 
 ## **Evaluate the training**
 
-```terminal
-cd ~/git/deepracer-for-dummies/scripts/evaluation && \
-    sudo ./start.sh
-```
+1. Start evaluating the training:
+
+    ```terminal
+    cd ~/git/deepracer-for-dummies/scripts/evaluation && \
+        sudo ./start.sh
+    ```
+
+2. Stop evaluating the training:
+
+    ```terminal
+    cd ~/git/deepracer-for-dummies/scripts/evaluation && \
+        sudo ./stop.sh
+    ```
 
 [Back to Top](#Deep-Racer)
 
