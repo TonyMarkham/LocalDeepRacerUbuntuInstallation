@@ -2,22 +2,22 @@
 
 ## **Content**
 
-* [1. Install Ubuntu](#1.-Install-Ubuntu)
-* [2. Install nvidia drivers](#2.-Install-nvidia-drivers)
-* [3. Install Anaconda](#3.-Install-Anaconda)
-* [4. Install the AWS Commandline Interface (awscli)](#4.-Install-the-AWS-Commandline-Interface-(awscli))
-* [5. Configure aws.cli](#5.-Configure-aws.cli)
-* [6. Install Docker](#6.-Install-Docker)
-* [7. Install Docker Compose](#7.-Install-Docker-Compose)
-* [8. Install nvidia-docker](#8.-Install-nvidia-docker)
-* [9. Post Docker Install](#9.-Post-Docker-Install)
-* [10. Install VNC Viewer](#10.-Install-VNC-Viewer)
-* [11. Install Visual Studio Code](#11.-Install-Visual-Studio-Code)
-* [12. Clone the deepracer-for-dummies Repository](#12.-Clone-the-deepracer-for-dummies-Repository)
-* [13. Start the Docker sagemaker-local Container](#13.-Start-the-Docker-sagemaker-local-Container)
-* [14. Start the training with the defaults](#14.-Start-the-training-with-the-defaults)
+* [1. Install Ubuntu](#Install-Ubuntu)
+* [2. Install nvidia drivers](#Install-nvidia-drivers)
+* [3. Install Anaconda](#Install-Anaconda)
+* [4. Install the AWS Commandline Interface (awscli)](#Install-the-AWS-Commandline-Interface-(awscli))
+* [5. Configure aws.cli](#Configure-aws.cli)
+* [6. Install Docker](#Install-Docker)
+* [7. Install Docker Compose](#Install-Docker-Compose)
+* [8. Install nvidia-docker](#Install-nvidia-docker)
+* [9. Post Docker Install](#Post-Docker-Install)
+* [10. Install VNC Viewer](#Install-VNC-Viewer)
+* [11. Install Visual Studio Code](#Install-Visual-Studio-Code)
+* [12. Clone the deepracer-for-dummies Repository](#Clone-the-deepracer-for-dummies-Repository)
+* [13. Start the Docker sagemaker-local Container](#Start-the-Docker-sagemaker-local-Container)
+* [14. Start the training with the defaults](#Start-the-training-with-the-defaults)
 
-## **1. Install Ubuntu**
+## **Install Ubuntu**
 
 For the purposes of the `Deep Racer` Project, I elected to only install a `minimal` installation of `ubuntu 18.04 LTS` Desktop.
 
@@ -25,7 +25,7 @@ You can download the `18.04 LTS` Installation `iso image` from [https://ubuntu.c
 
 [Back to Top](#Deep-Racer)
 
-## **2. Install nvidia drivers**
+## **Install nvidia drivers**
 
 * **NOTE:** You may need to disable `Secure Boot` in your BIOS.
     My motherboard would not allow me to install the nvidia drivers with `Secure Boot` enabled, so I had to disable it in order to proceed.
@@ -102,7 +102,7 @@ You can download the `18.04 LTS` Installation `iso image` from [https://ubuntu.c
 
 [Back to Top](#Deep-Racer)
 
-## **3. Install Anaconda**
+## **Install Anaconda**
 
 1. Download Anaconda:
 
@@ -144,7 +144,7 @@ You can download the `18.04 LTS` Installation `iso image` from [https://ubuntu.c
 
 [Back to Top](#Deep-Racer)
 
-## **4. Install the AWS Commandline Interface (awscli)**
+## **Install the AWS Commandline Interface (awscli)**
 
 1. Install aws-cli
 
@@ -166,7 +166,7 @@ You can download the `18.04 LTS` Installation `iso image` from [https://ubuntu.c
 
 [Back to Top](#Deep-Racer)
 
-## **5. Configure aws.cli**
+## **Configure aws.cli**
 
 1. Go to [https://aws.amazon.com/](https://aws.amazon.com/).
 
@@ -242,7 +242,7 @@ You can download the `18.04 LTS` Installation `iso image` from [https://ubuntu.c
 
 [Back to Top](#Deep-Racer)
 
-## **6. Install Docker**
+## **Install Docker**
 
 1. Make sure your Ubuntu is clean of Docker components:
 
@@ -344,7 +344,7 @@ You can download the `18.04 LTS` Installation `iso image` from [https://ubuntu.c
 
 [Back to Top](#Deep-Racer)
 
-## **7. Install Docker Compose**
+## **Install Docker Compose**
 
 1. Run this command to download the current stable release of Docker Compose:
 
@@ -372,7 +372,7 @@ You can download the `18.04 LTS` Installation `iso image` from [https://ubuntu.c
 
 [Back to Top](#Deep-Racer)
 
-## **8. Install nvidia-docker**
+## **Install nvidia-docker**
 
 1. Set the `distribution` variable:
 
@@ -412,7 +412,7 @@ You can download the `18.04 LTS` Installation `iso image` from [https://ubuntu.c
 
 [Back to Top](#Deep-Racer)
 
-## **9. Post Docker Install**
+## **Post Docker Install**
 
 1. Create the docker group.
 
@@ -446,7 +446,7 @@ You can download the `18.04 LTS` Installation `iso image` from [https://ubuntu.c
 
 [Back to Top](#Deep-Racer)
 
-## **10. Install VNC Viewer**
+## **Install VNC Viewer**
 
 1. Change to your `Downloads` folder
 
@@ -482,7 +482,7 @@ You can download the `18.04 LTS` Installation `iso image` from [https://ubuntu.c
 
 [Back to Top](#Deep-Racer)
 
-## **11. Install Visual Studio Code**
+## **Install Visual Studio Code**
 
 1. Import the Microsoft GPG key:
 
@@ -510,7 +510,7 @@ You can download the `18.04 LTS` Installation `iso image` from [https://ubuntu.c
 
 [Back to Top](#Deep-Racer)
 
-## **12. Clone the deepracer-for-dummies Repository**
+## **Clone the deepracer-for-dummies Repository**
 
 1. Create a Directory for cloning git Repositories:
 
@@ -538,13 +538,13 @@ You can download the `18.04 LTS` Installation `iso image` from [https://ubuntu.c
 
 [Back to Top](#Deep-Racer)
 
-## **13. Start the Docker sagemaker-local Container**
+## **Start the Docker sagemaker-local Container**
 
 ```terminal
 docker network create sagemaker-local
 ```
 
-## **14. Start the training with the defaults**
+## **Start the training with the defaults**
 
 ```terminal
 cd ~/git/deepracer-for-dummies && sudo ./scripts/training/start.sh
