@@ -242,6 +242,11 @@ You can download the `18.04 LTS` Installation `iso image` from [https://ubuntu.c
 
     ```terminal
     aws configure
+    ```
+
+    Fill in the promts:
+
+    ```terminal
     AWS Access Key ID [None]: {from Step 11 > 1}
     AWS Secret Access Key [None]: {from Step 11 > 2}
     Default region name [None]: us-east-1
