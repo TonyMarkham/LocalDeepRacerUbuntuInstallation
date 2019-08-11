@@ -116,7 +116,7 @@ You can download the `18.04 LTS` Installation `iso image` from [https://ubuntu.c
 2. Install Anaconda:
 
     ```terminal
-    bash Anaconda3-2019.03-Linux-x86_64.sh
+    sudo bash Anaconda3-2019.03-Linux-x86_64.sh
     ```
 
 3. Go back to your `HOME` directory:
