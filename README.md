@@ -343,6 +343,8 @@ You can download the `18.04 LTS` Installation `iso image` from [https://ubuntu.c
     Aug 10 14:48:45 ununtu-tony systemd[1]: Started Docker Application Container Engine.
     ```
 
+    Go ahead and \<CTRL-C\> to get out of that command.
+
 10. Check Docker's version:
 
     ```terminal
