@@ -19,6 +19,8 @@
 * [15. Set the track to train on](#Set-the-track-to-train-on)
 * [16. Start the training with the defaults](#Start-the-training-with-the-defaults)
 * [17. Evaluate the training](#Evaluate-the-training)
+* [18. Tweak the rewards](#Tweak-the-rewards)
+* [19. Tweak the hyperparameters](#Tweak-the-hyperparameters)
 
 ## **Install Ubuntu**
 
@@ -604,6 +606,26 @@ docker network create sagemaker-local
 ```terminal
 cd ~/git/deepracer-for-dummies/scripts/evaluation && \
     sudo ./start.sh
+```
+
+[Back to Top](#Deep-Racer)
+
+## **Tweak the rewards**
+
+1. Edit the `reward.py` file in Visual Studio Code:
+
+```terminal
+code ~/git/deepracer-for-dummies/docker/volumes/minio/bucket/custom_files/reward.py
+```
+
+[Back to Top](#Deep-Racer)
+
+## **Tweak the hyperparameters**
+
+1. Edit the `rl_deepracer_coach_robomaker.py` file in Visual Studio Code:
+
+```terminal
+code ~/git/deepracer-for-dummies/rl_deepracer_coach_robomaker.py
 ```
 
 [Back to Top](#Deep-Racer)
