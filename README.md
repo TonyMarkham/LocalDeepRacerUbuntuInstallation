@@ -150,7 +150,7 @@ You can download the `18.04 LTS` Installation `iso image` from [https://ubuntu.c
 1. Install aws-cli
 
     ```terminal
-    pip install -U awscli
+    pip install --user awscli
     ```
 
 2. Verify
