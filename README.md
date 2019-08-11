@@ -15,7 +15,7 @@
 * [11. Install Visual Studio Code](#11.-Install-Visual-Studio-Code)
 * [12. Clone the deepracer-for-dummies Repository](#12.-Clone-the-deepracer-for-dummies-Repository)
 * [13. Start the Docker sagemaker-local Container](#13.-Start-the-Docker-sagemaker-local-Container)
-* [empty](#empty)
+* [14. Start the training with the defaults](#14.-Start-the-training-with-the-defaults)
 
 ## **1. Install Ubuntu**
 
@@ -540,10 +540,14 @@ You can download the `18.04 LTS` Installation `iso image` from [https://ubuntu.c
 
 ## **13. Start the Docker sagemaker-local Container**
 
-    ```terminal
-    docker network create sagemaker-local
-    ```
+```terminal
+docker network create sagemaker-local
+```
 
-## **Empty**
+## **14. Start the training with the defaults**
+
+```terminal
+cd ~/git/deepracer-for-dummies && sudo ./scripts/training/start.sh
+```
 
 [Back to Top](#Deep-Racer)
