@@ -151,16 +151,16 @@ You can download the `18.04 LTS` Installation `iso image` from [https://ubuntu.c
 1. Install aws-cli
 
     ```terminal
-    sudo pip3 install awscli --upgrade
+    pip install awscli --upgrade --user
     ```
 
 2. Update your path to include the default location for aws:
 
     ```terminal
-    echo "export PATH=\"$HOME/.local/bin;$PATH\"" >> ~/.bashrc && source ~/.bashrc
+    echo "export PATH=\"$HOME/.local/bin:$PATH\"" >> ~/.bashrc && source ~/.bashrc
     ```
 
-2. Verify
+3. Verify
 
     ```terminal
     aws --version
