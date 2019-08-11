@@ -108,15 +108,16 @@ You can download the `18.04 LTS` Installation `iso image` from [https://ubuntu.c
 1. Download Anaconda:
 
     ```terminal
-    sudo apt-get update -y && sudo apt-get upgrade -y && \
-    cd /tmp/ && \
-    sudo wget https://repo.anaconda.com/archive/Anaconda3-2019.03-Linux-x86_64.sh
+    sudo apt-get update -y && \
+        sudo apt-get upgrade -y && \
+        cd /tmp/ && \
+        sudo wget https://repo.anaconda.com/archive/Anaconda3-2019.03-Linux-x86_64.sh
     ```
 
 2. Install Anaconda:
 
     ```terminal
-    sudo bash Anaconda3-2019.03-Linux-x86_64.sh
+    bash Anaconda3-2019.03-Linux-x86_64.sh
     ```
 
 3. Go back to your `HOME` directory:
@@ -150,7 +151,13 @@ You can download the `18.04 LTS` Installation `iso image` from [https://ubuntu.c
 1. Install aws-cli
 
     ```terminal
-    pip install --user awscli
+    sudo pip3 install awscli --upgrade
+    ```
+
+2. Update your path to include the default location for aws:
+
+    ```terminal
+    echo "export PATH=\"$HOME/.local/bin;$PATH\"" >> ~/.bashrc && source ~/.bashrc
     ```
 
 2. Verify
