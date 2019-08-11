@@ -16,7 +16,9 @@
 * [12. Reboot](#Reboot)
 * [13. Clone the deepracer-for-dummies Repository](#Clone-the-deepracer-for-dummies-Repository)
 * [14. Start the Docker sagemaker-local Container](#Start-the-Docker-sagemaker-local-Container)
-* [15. Start the training with the defaults](#Start-the-training-with-the-defaults)
+* [15. Set the track to train on](#Set-the-track-to-train-on)
+* [16. Start the training with the defaults](#Start-the-training-with-the-defaults)
+* [17. Evaluate the training](#Evaluate-the-training)
 
 ## **Install Ubuntu**
 
@@ -577,6 +579,8 @@ docker network create sagemaker-local
     sudo sed -i 's/WORLD_NAME=AWS_track/WORLD_NAME=China_track/' ~/git/deepracer-for-dummies/docker/.env
     ```
 
+[Back to Top](#Deep-Racer)
+
 ## **Start the training with the defaults**
 
 1. Start the training:
@@ -592,6 +596,8 @@ docker network create sagemaker-local
     cd ~/git/deepracer-for-dummies/scripts/training && \
         sudo ./stop.sh
     ```
+
+[Back to Top](#Deep-Racer)
 
 ## **Evaluate the training**
 
