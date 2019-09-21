@@ -15,7 +15,7 @@
 3. Install some prerequisite packages:
 
     ```terminal
-    sudo apt-get install -y -U \
+    sudo apt-get install -y \
         apt-transport-https \
         ca-certificates \
         curl \
