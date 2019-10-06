@@ -5,21 +5,19 @@
 * `August Track`
 
     ```terminal
-    sed -i 's/WORLD_NAME=AWS_track/WORLD_NAME=China_track/' ~/git/deepracer-for-dummies/docker/.env
+    sed -i '/WORLD_NAME=/ c\WORLD_NAME=China_track' ~/git/deepracer-for-dummies/docker/.env
     ```
     
 * `September Track`
 
-    * If updating from a fresh clone:
+    ```terminal
+    sed -i '/WORLD_NAME=/ c\WORLD_NAME=Mexico_track' ~/git/deepracer-for-dummies/docker/.env
+    ```
 
-        ```terminal
-        sed -i 's/WORLD_NAME=AWS_track/WORLD_NAME=Mexico_track/' ~/git/deepracer-for-dummies/docker/.env
-        ```
+* `October Track`
 
-    * If updating from the August Track:
-
-        ```terminal
-        sed -i 's/WORLD_NAME=China_track/WORLD_NAME=Mexico_track/' ~/git/deepracer-for-dummies/docker/.env
-        ```
+    ```terminal
+    sed -i '/WORLD_NAME=/ c\WORLD_NAME=Canada_Training' ~/git/deepracer-for-dummies/docker/.env
+    ```
 
 [Back to readme](../README.md)
