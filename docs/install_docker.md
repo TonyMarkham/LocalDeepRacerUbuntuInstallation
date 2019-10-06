@@ -6,13 +6,19 @@
     sudo apt-get remove docker docker-engine docker.io containerd runc
     ```
 
-2. Update your packages:
+2. Remove unnecesary packages:
+
+    ```terminal
+    sudo apt autoremove
+    ```
+
+3. Update your packages:
 
     ```terminal
     sudo apt-get update
     ```
 
-3. Install some prerequisite packages:
+4. Install some prerequisite packages:
 
     ```terminal
     sudo apt-get install -y \
@@ -23,37 +29,37 @@
         software-properties-common
     ```
 
-4. Add the GPG key for the official Docker repository:
+5. Add the GPG key for the official Docker repository:
 
     ```terminal
     sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
     ```
 
-5. Add the Docker Repository to your apt sources:
+6. Add the Docker Repository to your apt sources:
 
     ```terminal
     sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
     ```
 
-6. Update your packages again:
+7. Update your packages again:
 
     ```terminal
     sudo apt-get update
     ```
 
-7. Make sure you are about to install from the Docker repo instead of the default Ubuntu repo:
+8. Make sure you are about to install from the Docker repo instead of the default Ubuntu repo:
 
     ```
     apt-cache policy docker-ce
     ```
 
-8. Install Docker:
+9. Install Docker:
 
     ```terminal
     sudo apt-get install -y docker-ce docker-ce-cli containerd.io
     ```
 
-9. Check that Docker is running:
+10. Check that Docker is running:
 
     ```terminal
     sudo systemctl status docker
@@ -85,7 +91,7 @@
 
     Go ahead and \<CTRL-C\> to get out of that command.
 
-10. Check Docker's version:
+11. Check Docker's version:
 
     ```terminal
     docker --version
